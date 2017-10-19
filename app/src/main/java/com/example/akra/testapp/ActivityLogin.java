@@ -12,6 +12,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
 {
 
     Intent backBttnActive2;
+    Intent LoginStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,10 +22,13 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
         //Toast.makeText(this, "8===>", Toast.LENGTH_LONG).show();
 
         Button btms2 = (Button)findViewById(R.id.buttonBackToMainScreen2);
+        Button Start = (Button)findViewById(R.id.buttonLoginStart);
 
         btms2.setOnClickListener(this);
+        Start.setOnClickListener(this);
 
         backBttnActive2 = new Intent(ActivityLogin.this, MainActivity.class);
+        LoginStart = new Intent(ActivityLogin.this, ActivityStartGame.class);
 
     }
 
@@ -39,6 +43,10 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
 
+            case R.id.buttonLoginStart:
+                startActivity(LoginStart);
+                finish();
+                break;
         }
     }
 
